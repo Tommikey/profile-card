@@ -12,8 +12,6 @@
             <figure>
                 <img data-testid="test-user-avatar" id="avatar-img" src="img/db_.jpg" alt="Profile picture of Michael Omogbehin">
                 <figcaption>Avatar</figcaption>
-                <input type="file" id="avatar-upload" accept="image/*" style="display: none;">
-                <button id="upload-btn" type="button">Upload Image</button>
             </figure>
         </div>
         <div class="content-section">
@@ -65,25 +63,7 @@
         // Update every second for dynamic feel (optional, but reasonable)
         setInterval(updateTime, 1000);
 
-        // Image upload functionality
-        const uploadBtn = document.getElementById('upload-btn');
-        const fileInput = document.getElementById('avatar-upload');
-        const avatarImg = document.getElementById('avatar-img');
 
-        uploadBtn.addEventListener('click', () => {
-            fileInput.click();
-        });
-
-        fileInput.addEventListener('change', (event) => {
-            const file = event.target.files[0];
-            if (file) {
-                const reader = new FileReader();
-                reader.onload = (e) => {
-                    avatarImg.src = e.target.result;
-                };
-                reader.readAsDataURL(file);
-            }
-        });
     </script>
 </body>
 </html>
