@@ -74,26 +74,29 @@ p[data-testid="test-user-bio"] {
     color: #555;
     line-height: 1.5;
 }
-nav[data-testid="test-user-social-links"] ul {
-    list-style: none;
-    padding: 0;
+footer {
+    margin-top: 30px;
+    padding: 20px;
+    text-align: center;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+}
+
+.social-links {
     display: flex;
-    gap: 10px;
-    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
 }
-nav[data-testid="test-user-social-links"] li a {
-    color: #007bff;
+
+.social-links a {
+    color: #555;
     text-decoration: none;
-    padding: 5px 10px;
-    border: 1px solid #007bff;
-    border-radius: 4px;
-    transition: background-color 0.3s;
+    font-size: 24px;
+    transition: color 0.3s ease;
 }
-nav[data-testid="test-user-social-links"] li a:hover,
-nav[data-testid="test-user-social-links"] li a:focus {
-    background-color: #007bff;
-    color: white;
-    outline: 2px solid #0056b3;
+
+.social-links a:hover {
+    color: #007bff;
 }
 section ul[data-testid="test-user-hobbies"],
 section ul[data-testid="test-user-dislikes"] {
