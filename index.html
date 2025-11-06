@@ -11,42 +11,77 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="wrapper">
-        <main>
-            <article data-testid="test-profile-card">
-                <div class="avatar-section">
-            <figure>
-                <img data-testid="test-user-avatar" id="avatar-img" src="img/db_.jpg" alt="Profile picture of Michael Omogbehin">
-                <figcaption>Avatar</figcaption>
-            </figure>
-        </div>
-        <div class="content-section">
-            <header>
-                <h2 data-testid="test-user-name">Michael Omogbehin</h2>
-            </header>
-            <p data-testid="test-user-bio">A passionate developer who loves coding and food.</p>
-
-            <section>
-                <h3>Hobbies</h3>
-                <ul data-testid="test-user-hobbies">
-                    <li>Reading</li>
-                    <li>Cooking</li>
-                    <li>Coding</li>
-                </ul>
-            </section>
-            <section>
-                <h3>Dislikes</h3>
-                <ul data-testid="test-user-dislikes">
-                    <li>Slow internet</li>
-                    <li>Bugs in code</li>
-                    <li>Dishonesty</li>
-                </ul>
-            </section>
-            <div class="time-section">
-                <p>Current time: <span data-testid="test-user-time"></span></p>
+    <div class="container">
+        <div class="hero-image"></div>
+        <main class="profile-card">
+            <div class="profile-header">
+                <div class="profile-image">
+                    <img data-testid="test-user-avatar" src="img/db_.jpg" alt="Michael Omogbehin" class="avatar">
+                </div>
+                <div class="profile-info">
+                    <h1 data-testid="test-user-name">Michael Omogbehin <span class="title">(Software Developer)</span></h1>
+                    <p class="location"><i class="fas fa-location-dot"></i> Lagos, Nigeria</p>
+                    <p data-testid="test-user-bio" class="bio">A passionate developer who loves building impactful solutions through clean code and innovative approaches.</p>
+                </div>
+                <div class="action-buttons">
+                    <a href="#" class="btn btn-primary" onclick="window.location.href='mailto:tommike104@gmail.com'">Get in touch</a>
+                    <a href="https://github.com/Tommikey" class="btn btn-secondary" target="_blank">View Profile</a>
+                </div>
             </div>
-        </div>
-    </article>
+
+            <div class="skills-section">
+                <h2>Skills</h2>
+                <div class="badges">
+                    <span class="badge badge-primary">JavaScript</span>
+                    <span class="badge badge-success">React</span>
+                    <span class="badge badge-info">Node.js</span>
+                    <span class="badge badge-warning">Python</span>
+                    <span class="badge badge-danger">UI/UX Design</span>
+                </div>
+            </div>
+
+            <div class="tools-section">
+                <h2>Tools & Technologies</h2>
+                <div class="tools">
+                    <div class="tool">
+                        <i class="fab fa-react"></i>
+                        <span>React</span>
+                    </div>
+                    <div class="tool">
+                        <i class="fab fa-node-js"></i>
+                        <span>Node.js</span>
+                    </div>
+                    <div class="tool">
+                        <i class="fab fa-python"></i>
+                        <span>Python</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="rate-section">
+                <h2>Rate</h2>
+                <div class="rates">
+                    <span class="rate">$30-60/hr</span>
+                    <span class="rate">$500/project</span>
+                </div>
+            </div>
+
+            <div class="experience-section">
+                <h2>Experience</h2>
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <h3>Software Development</h3>
+                        <span class="duration">2022-2025 (3 years)</span>
+                    </div>
+                    <div class="companies">
+                        <div class="company">
+                            <img src="https://github.com/Tommikey.png" alt="Profile" class="company-logo">
+                            <span>Freelance & Personal Projects</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
     <script>
         function updateTime() {
             const timeElement = document.querySelector('[data-testid="test-user-time"]');

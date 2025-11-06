@@ -1,12 +1,15 @@
 :root {
-    --primary-color: #4F46E5;
-    --secondary-color: #06B6D4;
-    --text-primary: #1F2937;
+    --primary-color: #0066FF;
+    --secondary-color: #E5E7EB;
+    --text-primary: #111827;
     --text-secondary: #4B5563;
     --bg-primary: #F9FAFB;
-    --card-bg: rgba(255, 255, 255, 0.95);
-    --card-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.1);
-    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --bg-secondary: #FFFFFF;
+    --success-color: #10B981;
+    --warning-color: #F59E0B;
+    --danger-color: #EF4444;
+    --info-color: #3B82F6;
+    --transition: all 0.2s ease-in-out;
 }
 
 @keyframes gradient {
@@ -24,16 +27,303 @@ html {
     scroll-behavior: smooth;
 }
 
-body {
-    margin: 0;
-    padding: 0;
-    min-height: 100vh;
-    font-family: 'Poppins', sans-serif;
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.hero-image {
+    height: 200px;
+    background-image: url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=80');
+    background-size: cover;
+    background-position: center;
+    border-radius: 1rem 1rem 0 0;
+    margin-bottom: -64px;
+}
+
+.profile-card {
+    background-color: var(--bg-secondary);
+    border-radius: 1rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    margin-top: -2rem;
+}
+
+.profile-header {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 2rem;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.profile-image {
+    position: relative;
+    margin-top: -80px;
+}
+
+.avatar {
+    width: 128px;
+    height: 128px;
+    border-radius: 50%;
+    border: 4px solid white;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    object-fit: cover;
+}
+
+.profile-info h1 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.title {
+    color: var(--text-secondary);
+    font-weight: normal;
+    font-size: 1rem;
+}
+
+.location {
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+    margin-bottom: 1rem;
+}
+
+.location i {
+    margin-right: 0.5rem;
+}
+
+.bio {
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+    max-width: 600px;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 1rem;
+}
+
+.btn {
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.btn-secondary {
+    background-color: var(--secondary-color);
     color: var(--text-primary);
-    line-height: 1.6;
-    background: linear-gradient(-45deg, #4F46E5, #06B6D4, #3B82F6, #8B5CF6);
-    background-size: 400% 400%;
-    animation: gradient 15s ease infinite;
+}
+
+.btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.skills-section,
+.tools-section,
+.rate-section,
+.experience-section {
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--secondary-color);
+}
+
+h2 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+}
+
+.badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.badge {
+    padding: 0.5rem 1rem;
+    border-radius: 2rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+.badge-primary { background-color: #E0F2FE; color: #0066FF; }
+.badge-success { background-color: #DCFCE7; color: #10B981; }
+.badge-warning { background-color: #FEF3C7; color: #F59E0B; }
+.badge-danger { background-color: #FEE2E2; color: #EF4444; }
+.badge-info { background-color: #DBEAFE; color: #3B82F6; }
+
+.tools {
+    display: flex;
+    gap: 2rem;
+}
+
+.tool {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.tool i {
+    font-size: 1.5rem;
+    color: var(--text-secondary);
+}
+
+.tool span {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+}
+
+.rates {
+    display: flex;
+    gap: 1rem;
+}
+
+.rate {
+    background-color: var(--secondary-color);
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+.experience-item {
+    margin-bottom: 1.5rem;
+}
+
+.experience-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.duration {
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+}
+
+.companies {
+    display: flex;
+    gap: 1rem;
+}
+
+.company {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.company-logo {
+    width: 24px;
+    height: 24px;
+    border-radius: 4px;
+}
+
+.company span {
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+}
+
+footer {
+    margin-top: 2rem;
+    padding: 2rem 0;
+    border-top: 1px solid var(--secondary-color);
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.social-links a {
+    color: var(--text-secondary);
+    font-size: 1.25rem;
+    transition: var(--transition);
+    padding: 0.5rem;
+    border-radius: 50%;
+    background: var(--bg-secondary);
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.social-links a:hover {
+    color: var(--primary-color);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+    .profile-header {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .profile-image {
+        margin: -80px auto 0;
+    }
+
+    .action-buttons {
+        justify-content: center;
+    }
+
+    .tools {
+        justify-content: center;
+    }
+
+    .experience-header {
+        flex-direction: column;
+        gap: 0.5rem;
+        text-align: center;
+    }
+
+    .badges {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 1rem;
+    }
+
+    .profile-card {
+        padding: 1.5rem;
+    }
+
+    .btn {
+        padding: 0.5rem 1rem;
+        font-size: 0.875rem;
+    }
+
+    .hero-image {
+        height: 150px;
+    }
+
+    .avatar {
+        width: 100px;
+        height: 100px;
+    }
+
+    .profile-image {
+        margin-top: -50px;
+    }
 }
 
 .wrapper {
